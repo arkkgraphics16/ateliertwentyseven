@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
@@ -7,62 +9,60 @@ const Sheet = DialogPrimitive.Root;
 const SheetTrigger = DialogPrimitive.Trigger;
 const SheetClose = DialogPrimitive.Close;
 
-const SheetPortal = ({ className, ...props }: DialogPrimitive.DialogPortalProps) => (
-  <DialogPrimitive.Portal className={cn(className)} {...props} />
+const SheetPortal = ({
+  children,
+  ...props
+}: DialogPrimitive.DialogPortalProps) => (
+  <DialogPrimitive.Portal {...props}>
+    <div className="fixed inset-0 z-50 flex">{children}</div>
+  </DialogPrimitive.Portal>
 );
-SheetPortal.displayName = DialogPrimitive.Portal.displayName;
+SheetPortal.displayName = "SheetPortal";
 
 const SheetOverlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Overlay
-    className={cn(
-      "fixed inset-0 z-40 bg-ink/40 backdrop-blur-sm data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
-      className
-    )}
     ref={ref}
+    className={cn("fixed inset-0 bg-black/40 backdrop-blur-sm", className)}
     {...props}
   />
 ));
 SheetOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
+type Side = "left" | "right" | "top" | "bottom";
+
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ className, children, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
+    side?: Side;
+  }
+>(({ className, side = "right", children, ...props }, ref) => (
   <SheetPortal>
     <SheetOverlay />
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed inset-y-0 right-0 z-50 flex w-full max-w-sm flex-col gap-6 overflow-y-auto bg-card p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=open]:slide-in-from-right data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right",
+        "fixed z-50 bg-card text-ink shadow-atelier p-6",
+        side === "right" && "right-0 top-0 h-full w-80 border-l border-muted/60",
+        side === "left" && "left-0 top-0 h-full w-80 border-r border-muted/60",
+        side === "top" && "left-0 right-0 top-0 h-1/2 border-b border-muted/60",
+        side === "bottom" && "left-0 right-0 bottom-0 h-1/2 border-t border-muted/60",
         className
       )}
       {...props}
     >
-      <SheetClose className="absolute right-4 top-4 rounded-full bg-muted/60 p-2 text-ink/70 transition hover:bg-muted" aria-label="Close menu">
-        <X className="h-5 w-5" />
-      </SheetClose>
       {children}
+      <DialogPrimitive.Close
+        className="absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+        aria-label="Close"
+      >
+        <X className="h-5 w-5" />
+      </DialogPrimitive.Close>
     </DialogPrimitive.Content>
   </SheetPortal>
 ));
 SheetContent.displayName = DialogPrimitive.Content.displayName;
 
-const SheetHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn("space-y-2 text-center", className)} {...props} />
-);
-SheetHeader.displayName = "SheetHeader";
-
-const SheetDescription = ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-  <p className={cn("text-sm text-ink/70", className)} {...props} />
-);
-SheetDescription.displayName = "SheetDescription";
-
-const SheetFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn("mt-auto flex flex-col gap-2", className)} {...props} />
-);
-SheetFooter.displayName = "SheetFooter";
-
-export { Sheet, SheetTrigger, SheetClose, SheetContent, SheetHeader, SheetFooter, SheetDescription };
+export { Sheet, SheetTrigger, SheetClose, SheetContent };

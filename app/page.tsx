@@ -94,7 +94,7 @@ export default function HomePage() {
             />
           </div>
         </div>
-        <div className="card-surface flex flex-col justify-between rounded-3xl bg-white p-8 shadow-brass">
+        <div className="card-surface flex flex-col justify-between rounded-3xl bg-white p-8 shadow-atelier">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-primary">Featured video</p>
             <h3 className="mt-2 text-2xl font-semibold text-ink">Tour our kitchen studio</h3>
@@ -106,7 +106,7 @@ export default function HomePage() {
             title="Tour our kitchen studio"
             videoUrl="https://player.vimeo.com/video/1084537"
             trigger={
-              <button className="mt-6 flex items-center gap-3 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-brass transition hover:bg-primary/90">
+              <button className="mt-6 flex items-center gap-3 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-atelier transition hover:bg-primary/90">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
                   ▶
                 </span>

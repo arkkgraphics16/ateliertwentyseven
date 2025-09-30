@@ -27,7 +27,7 @@ export const HoursTable = () => {
   const currentDay = new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(new Date());
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-muted/60 bg-white shadow-brass">
+    <div className="overflow-hidden rounded-3xl border border-muted/60 bg-white shadow-atelier">
       <table className="w-full text-left text-sm">
         <tbody>
           {hours.map((entry) => {

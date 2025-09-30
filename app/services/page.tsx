@@ -35,7 +35,7 @@ export default function ServicesPage() {
       </p>
       <div className="mt-12 grid gap-8 md:grid-cols-2">
         {services.map((service) => (
-          <div key={service.title} className="flex h-full flex-col rounded-3xl bg-white p-8 shadow-brass">
+          <div key={service.title} className="flex h-full flex-col rounded-3xl bg-white p-8 shadow-atelier">
             <div className="flex-1 space-y-4">
               <h2 className="text-2xl font-semibold text-ink">{service.title}</h2>
               <p className="text-ink/70">{service.description}</p>
