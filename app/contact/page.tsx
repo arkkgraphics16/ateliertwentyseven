@@ -27,7 +27,7 @@ export default function ContactPage() {
       <div className="mt-12 grid gap-12 lg:grid-cols-[3fr,2fr]">
         <div className="space-y-8">
           <ReservationForm />
-          <div className="rounded-3xl bg-white p-6 shadow-brass">
+          <div className="rounded-3xl bg-white p-6 shadow-atelier">
             <h2 className="text-xl font-semibold text-ink">Direct hotline</h2>
             <div className="mt-4 flex flex-wrap gap-3">
               <span className="badge-pill bg-primary/10 text-primary">
@@ -51,7 +51,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-semibold text-ink">Branch details</h2>
             <ul className="space-y-4 text-sm text-ink/70">
               {branches.map((branch) => (
-                <li key={branch.name} className="rounded-3xl bg-white p-4 shadow-brass">
+                <li key={branch.name} className="rounded-3xl bg-white p-4 shadow-atelier">
                   <p className="text-lg font-semibold text-ink">{branch.name}</p>
                   <p dangerouslySetInnerHTML={{ __html: branch.address }} />
                   <p className="text-sm text-ink/60">{branch.phone}</p>
@@ -68,7 +68,7 @@ export default function ContactPage() {
           </div>
           <div>
             <h2 className="text-2xl font-semibold text-ink">Visit us</h2>
-            <div className="mt-3 overflow-hidden rounded-3xl shadow-brass">
+            <div className="mt-3 overflow-hidden rounded-3xl shadow-atelier">
               <iframe
                 src="https://maps.example.com/embed/atelier27"
                 title="Map to Atelier 27"
