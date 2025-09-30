@@ -7,12 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#B88A2D",  // Brass
-        accent: "#2E7F6E",   // Sage Teal
-        ink: "#0B1320",      // Deep Navy
-        surface: "#F7F5F0",  // Ivory
-        card: "#FFFFFF",     // White
-        muted: "#ECE8DD",    // Bone (as a string so /opacity works)
+        primary: "#B88A2D",
+        accent: "#2E7F6E",
+        ink: "#0B1320",
+        surface: "#F7F5F0",
+        card: "#FFFFFF",
+        muted: "#ECE8DD", // string keeps /opacity utilities working
         success: "#1F8A5B",
         warning: "#E0A100",
         danger: "#D64545"
