@@ -34,7 +34,7 @@ export const Testimonials = () => {
 
   return (
     <section className="container-grid mt-24">
-      <div className="flex flex-col gap-6 rounded-3xl bg-white p-10 shadow-brass lg:flex-row lg:items-center lg:gap-12">
+      <div className="flex flex-col gap-6 rounded-3xl bg-white p-10 shadow-atelier lg:flex-row lg:items-center lg:gap-12">
         <div className="lg:w-1/3">
           <h2 className="text-3xl font-semibold">Guests love Atelier 27</h2>
           <p className="mt-3 text-ink/70">Voices from our global community of diners, creators, and tastemakers.</p>
