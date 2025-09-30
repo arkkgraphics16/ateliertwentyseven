@@ -35,9 +35,7 @@ type Side = "left" | "right" | "top" | "bottom";
 
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
-    side?: Side;
-  }
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & { side?: Side }
 >(({ className, side = "right", children, ...props }, ref) => (
   <SheetPortal>
     <SheetOverlay />
