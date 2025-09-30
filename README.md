@@ -24,3 +24,8 @@ rm -rf node_modules .next
 npm install
 npm run build
 -->
+<!--
+# After patch (human steps; Codex does not execute)
+npm install
+npm run build
+-->
