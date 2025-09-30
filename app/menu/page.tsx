@@ -56,7 +56,7 @@ export default function MenuPage() {
               className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
                 activeCategory === category.id
                   ? "bg-primary text-white"
-                  : "bg-white text-ink shadow-brass hover:bg-muted/60"
+                  : "bg-white text-ink shadow-atelier hover:bg-muted/60"
               }`}
               aria-pressed={activeCategory === category.id}
             >

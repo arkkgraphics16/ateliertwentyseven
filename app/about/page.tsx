@@ -48,7 +48,7 @@ export default function AboutPage() {
         <h2 className="text-3xl font-semibold">Timeline</h2>
         <div className="mt-8 space-y-6">
           {milestones.map((milestone) => (
-            <div key={milestone.year} className="flex flex-col gap-3 rounded-3xl bg-white p-6 shadow-brass sm:flex-row sm:items-center sm:justify-between">
+            <div key={milestone.year} className="flex flex-col gap-3 rounded-3xl bg-white p-6 shadow-atelier sm:flex-row sm:items-center sm:justify-between">
               <span className="text-2xl font-semibold text-primary">{milestone.year}</span>
               <p className="text-ink/70">{milestone.description}</p>
             </div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
         </p>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((member) => (
-            <div key={member.name} className="overflow-hidden rounded-3xl bg-white shadow-brass">
+            <div key={member.name} className="overflow-hidden rounded-3xl bg-white shadow-atelier">
               <div className="relative h-64 w-full">
                 <Image src={member.image} alt={member.name} fill className="object-cover" />
               </div>

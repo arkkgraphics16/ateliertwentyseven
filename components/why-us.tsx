@@ -62,7 +62,7 @@ export const WhyUs = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.3, delay: index * 0.05 }}
             whileHover={{ y: -4 }}
-            className="rounded-3xl bg-white p-6 shadow-brass"
+            className="rounded-3xl bg-white p-6 shadow-atelier"
           >
             <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full ${feature.color}`}>
               <feature.icon className="h-6 w-6 text-primary" />

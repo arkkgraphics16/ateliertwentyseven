@@ -21,7 +21,7 @@ export const VideoModal = ({ trigger, videoUrl, title }: VideoModalProps) => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 30 }}
-            className="relative w-full max-w-3xl rounded-3xl bg-card p-6 shadow-brass"
+            className="relative w-full max-w-3xl rounded-3xl bg-card p-6 shadow-atelier"
           >
             <Dialog.Close
               className="absolute right-4 top-4 rounded-full bg-muted/60 p-2 text-ink/70 transition hover:bg-muted"
