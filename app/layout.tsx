@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -72,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} min-h-screen bg-surface text-ink`}> 
+      <body className="min-h-screen bg-surface text-ink">
         <div className="relative flex min-h-screen flex-col">
           <Navbar />
           <main className="flex-1 pt-20">{children}</main>
