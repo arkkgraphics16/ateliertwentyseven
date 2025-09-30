@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #B88A2D;
+  --color-accent: #2E7F6E;
+  --color-ink: #0B1320;
+  --color-surface: #F7F5F0;
+  --color-card: #FFFFFF;
+  --color-muted: #ECE8DD;
+  --color-success: #1F8A5B;
+  --color-warning: #E0A100;
+  --color-danger: #D64545;
+}
+
+body {
+  @apply bg-surface text-ink font-sans antialiased;
+}
+
+a {
+  @apply text-accent underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary;
+}
+
+button:focus-visible,
+[href]:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  @apply outline outline-2 outline-offset-4 outline-primary;
+}
+
+::selection {
+  background: rgba(184, 138, 45, 0.2);
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-ink font-semibold;
+  }
+}
+
+@layer components {
+  .container-grid {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .card-surface {
+    @apply bg-card rounded-3xl shadow-brass;
+  }
+  .badge-pill {
+    @apply inline-flex items-center rounded-full border border-muted/60 bg-card px-3 py-1 text-xs font-medium text-ink/80;
+  }
+}
