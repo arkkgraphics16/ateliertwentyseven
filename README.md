@@ -17,3 +17,10 @@ Additional scripts:
 - `pnpm typecheck` – Run TypeScript type checks
 
 Create an `.env.local` file based on `.env.local.example` before running locally.
+
+<!--
+# local clean (Docs only; Codex does not execute)
+rm -rf node_modules .next
+npm install
+npm run build
+-->
